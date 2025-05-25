@@ -1,10 +1,13 @@
 import './LandingPage.css';
 import Header from '../components/Header';
 
-const LandingPage = () => {
+const LandingPage = ({ isBurgerActive, setIsBurgerActive }) => {
     return (
         <>
-        <Header />
+        <Header 
+            isBurgerActive={isBurgerActive}
+            setIsBurgerActive={setIsBurgerActive}
+        />
         <div className='heroText row'>
             <div style={{justifyContent:"center"}}>
                 <p className='name_hi'>Hi, my name is</p>

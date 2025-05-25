@@ -1,11 +1,14 @@
 import Burger from '../components/Burger';
 
-const LandingPage = () => {
+const Header = ({ isBurgerActive, setIsBurgerActive }) => {
   return (
     <div>
-      <Burger />
+      <Burger 
+        expanded={isBurgerActive}
+        setExpanded={setIsBurgerActive}
+      />
     </div>
   );
 };
 
-export default LandingPage;
+export default Header;

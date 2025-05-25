@@ -1,11 +1,13 @@
-import { useState } from "react";
 import "./Burger.css"
 
-const Burger = () => {
-  const [expanded, setExpanded] = useState(false);
+const Burger = ({ expanded, setExpanded }) => {
 
   const toggleExpanded = () => {
     setExpanded((prev) => !prev);
+  };
+
+  const handleClick = () => {
+    
   };
 
   return (
@@ -24,10 +26,11 @@ const Burger = () => {
       )}</div>
 
       <div style={{height:'3em'}}>
-        <label className="hamburger" htmlFor="hamburger">
+        <label className="hamburger" htmlFor="hamburger" id='hamburgerButton'>
             <input
             type="checkbox"
             id="hamburger"
+            onClick={handleClick}
             checked={expanded}
             onChange={toggleExpanded}
             />
@@ -51,7 +54,7 @@ const Burger = () => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          transition: opacity 0.3s ease 0.6s;
+          transition: opacity 0.6s cubic-bezier(0.8, 0, 0.3, 1) 0.1s;
           z-index: 20;
           align-items: center;
             opacity: ${expanded ? 1 : 0};

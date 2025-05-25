@@ -1,8 +1,10 @@
 import { useRef, useEffect } from 'react';
 
-const BackgroundBalls = () => {
+const BackgroundBalls = ({ paused }) => {
   const canvasRef = useRef(null);
   const balls = useRef([]);
+  const animationFrameId = useRef(null);
+  const pauseTimeoutId = useRef(null);
 
   const ballCount = 30;
 
@@ -49,23 +51,46 @@ const BackgroundBalls = () => {
       }
     }
 
-    balls.current = [];
-    for (let i = 0; i < ballCount; i++) {
-      balls.current.push(new Ball());
+    if (balls.current.length === 0) {
+      for (let i = 0; i < ballCount; i++) {
+        balls.current.push(new Ball());
+      }
     }
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      balls.current.forEach(ball => ball.update());
-      requestAnimationFrame(animate);
+      balls.current.forEach((ball) => ball.update());
+      animationFrameId.current = requestAnimationFrame(animate);
     };
 
-    animate();
+    if (!paused) {
+      // If unpausing, clear any pending pause timeout and start animation immediately
+      if (pauseTimeoutId.current) {
+        clearTimeout(pauseTimeoutId.current);
+        pauseTimeoutId.current = null;
+      }
+      animate();
+    } else {
+      animate();
+      pauseTimeoutId.current = setTimeout(() => {
+        if (animationFrameId.current) {
+          cancelAnimationFrame(animationFrameId.current);
+          animationFrameId.current = null;
+        }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }, 1000);
+    }
 
     return () => {
       window.removeEventListener('resize', setCanvasSize);
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+      if (pauseTimeoutId.current) {
+        clearTimeout(pauseTimeoutId.current);
+      }
     };
-  }, []);
+  }, [paused]);
 
   return (
     <canvas
