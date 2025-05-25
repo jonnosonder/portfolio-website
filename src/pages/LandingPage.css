@@ -1,0 +1,70 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+}
+
+.heroText {
+    display: flex;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.heroSocials {
+    flex: 0;
+    margin-top: 2rem;
+}
+
+h1 {
+    margin: 0px;
+    text-align: center;
+}
+
+p {
+    margin: 0px;
+}
+
+.name_hi {
+    text-align: start;
+}
+
+.box {
+    padding: 0.6rem;
+    margin: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 0.7rem;
+    transition: all ease 0.2s;
+    justify-content: center;
+    align-items: center;
+}
+
+.box svg {
+    fill: var(--secondary);
+    width: 3rem;
+    height: 3rem;
+}
+
+.box:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+    cursor: pointer;
+}
+
+
+@media (max-width: 710px) {
+    .toCenterWhenSmall {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .name_hi {
+        text-align: center;
+        justify-content: center;
+    }
+}
