@@ -5,7 +5,7 @@ html, body, #root {
 
 .heroText {
     display: flex;
-    height: 70vh;
+    height: 80vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -13,7 +13,6 @@ html, body, #root {
 
 .heroSocials {
     flex: 0;
-    margin-top: 2rem;
 }
 
 h1 {
@@ -56,8 +55,12 @@ p {
     cursor: pointer;
 }
 
+#toColapse {
+    display: flex;     
+}
 
-@media (max-width: 710px) {
+
+@media (max-width: 769px) {
     .toCenterWhenSmall {
         text-align: center;
         justify-content: center;
@@ -66,5 +69,13 @@ p {
     .name_hi {
         text-align: center;
         justify-content: center;
+    }
+
+    #toColapse {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 }

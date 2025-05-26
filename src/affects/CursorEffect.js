@@ -1,6 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { GlobalContext } from '../GlobalContext';
 
-const CursorEffect = ({ paused }) => {
+const CursorEffect = () => {
+  const { isBurgerActive } = useContext(GlobalContext);
+  const paused = isBurgerActive;
+
   useEffect(() => {
     if (paused) {
       document.body.style.background = 'var(--background)'; 

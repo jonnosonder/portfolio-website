@@ -1,12 +1,16 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useContext  } from 'react';
+import { GlobalContext } from '../GlobalContext';
 
-const BackgroundBalls = ({ paused }) => {
+const BackgroundBalls = () => {
+  const { isBurgerActive } = useContext(GlobalContext);
+  const paused = isBurgerActive;
+
   const canvasRef = useRef(null);
   const balls = useRef([]);
   const animationFrameId = useRef(null);
   const pauseTimeoutId = useRef(null);
 
-  const ballCount = 30;
+  const ballCount = 40;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -25,8 +29,8 @@ const BackgroundBalls = ({ paused }) => {
         this.radius = Math.random() * 2 + 1;
         this.x = Math.random() * (canvas.width - this.radius * 2) + this.radius;
         this.y = Math.random() * (canvas.height - this.radius * 2) + this.radius;
-        this.dx = (Math.random() - 0.5) * 1.2;
-        this.dy = (Math.random() - 0.5) * 1.2;
+        this.dx = (Math.random() - 0.5) * 1.5;
+        this.dy = (Math.random() - 0.5) * 1.5;
         this.color = 'white';
       }
 

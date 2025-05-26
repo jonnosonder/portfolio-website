@@ -1,24 +1,23 @@
 import "./Burger.css"
+import { useContext } from 'react';
+import { GlobalContext } from '../GlobalContext';
 
-const Burger = ({ expanded, setExpanded }) => {
 
-  const toggleExpanded = () => {
-    setExpanded((prev) => !prev);
-  };
-
-  const handleClick = () => {
-    
-  };
+const Burger = () => {
+  const { isBurgerActive, toggleExpanded } = useContext(GlobalContext);
 
   return (
     <>
-      <div className={`circle ${expanded ? "expanded" : ""}`}></div>
+      <div className={`circle ${isBurgerActive ? "expanded" : ""}`}></div>
 
-      <div className="content">{expanded && (
+      <div className="content">{isBurgerActive && (
         <div className="burgerItems">
           <p id="burgerName">Jonathan Kwok</p>
           <span id="rectangle"></span>
-          <button className="burgerBtn">Overview</button>
+          <button 
+          className="burgerBtn"
+          onClick={toggleExpanded}
+          >Overview</button>
           <button className="burgerBtn">Experience</button>
           <button className="burgerBtn">Cerfificates</button>
           <button className="burgerBtn">Skills</button>
@@ -30,8 +29,7 @@ const Burger = ({ expanded, setExpanded }) => {
             <input
             type="checkbox"
             id="hamburger"
-            onClick={handleClick}
-            checked={expanded}
+            checked={isBurgerActive}
             onChange={toggleExpanded}
             />
             <svg viewBox="0 0 32 32">
@@ -57,8 +55,8 @@ const Burger = ({ expanded, setExpanded }) => {
           transition: opacity 0.6s cubic-bezier(0.8, 0, 0.3, 1) 0.1s;
           z-index: 20;
           align-items: center;
-            opacity: ${expanded ? 1 : 0};
-            pointer-events: ${expanded ? "auto" : "none"};
+            opacity: ${isBurgerActive ? 1 : 0};
+            pointer-events: ${isBurgerActive ? "auto" : "none"};
         }
       `}</style>
     </>

@@ -66,6 +66,7 @@
 #burgerName{
     text-align: center;
     flex-direction: column;
+    font-size: 1.4rem;
 }
 
 #rectangle{
@@ -79,7 +80,6 @@
 .burgerBtn {
     display: flex;
     width: 100%;
-    font-size: 17px;
     background: transparent;
     border: none;
     padding: 1rem;
@@ -90,6 +90,7 @@
     transition: 0.5s ease;
     cursor: pointer;
     text-align: center;
+    font-size: 1.3rem;
 }
 
 .burgerBtn::before {

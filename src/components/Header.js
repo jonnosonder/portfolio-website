@@ -1,12 +1,9 @@
 import Burger from '../components/Burger';
 
-const Header = ({ isBurgerActive, setIsBurgerActive }) => {
+const Header = () => {
   return (
     <div>
-      <Burger 
-        expanded={isBurgerActive}
-        setExpanded={setIsBurgerActive}
-      />
+      <Burger />
     </div>
   );
 };

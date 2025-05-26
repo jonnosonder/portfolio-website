@@ -2,20 +2,16 @@ import LandingPage from './pages/LandingPage';
 import CursorEffect from './affects/CursorEffect';
 import BackgroundBalls from './affects/BackgroundBalls';
 
-import { useState } from "react"; 
+import { GlobalProvider } from './GlobalContext';
 
 function App() {
-  const [isBurgerActive, setIsBurgerActive] = useState(false);
 
   return (
-    <>
-    <LandingPage 
-      isBurgerActive={isBurgerActive}
-      setIsBurgerActive={setIsBurgerActive}
-    />
-    <CursorEffect paused={isBurgerActive} />
-    <BackgroundBalls paused={isBurgerActive} />
-    </>
+    <GlobalProvider>
+      <LandingPage />
+      <CursorEffect />
+      <BackgroundBalls />
+    </GlobalProvider>
   );
 }
 
