@@ -1,7 +1,14 @@
+.page {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
 .landingPageDiv {
     height: 100vh;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: 100%;
 }
 
 .landingPageDiv::-webkit-scrollbar {
@@ -18,8 +25,19 @@
 }
 
 section {
-    height: 80vh;
-    scroll-snap-align: center;
+    height: 70vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 48px;
+}
+
+.centerContents {
+    width: 90%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,22 +93,31 @@ p {
 }
 
 
-@media (max-width: 769px) {
-    .toCenterWhenSmall {
-        text-align: center;
-        justify-content: center;
-    }
+.wrapped .toCenterWhenSmall {
+    text-align: center;
+    justify-content: center;
+}
 
-    .name_hi {
-        text-align: center;
-        justify-content: center;
-    }
+.wrapped .name_hi {
+    text-align: center;
+    justify-content: center;
+}
 
-    #toColapse {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+.wrapped #toColapse {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fillSpace {
+    flex: 1;
+}
+
+h2 {
+    width: 100%;
+    display: flex;
+    text-align: start;
+    color: var(--primary);
 }

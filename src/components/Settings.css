@@ -1,14 +1,16 @@
 .setting {
   width: 48px;
-  height: 48px;
+  height: 45px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   cursor: pointer;
   border: none;
   background-color: transparent;
+  margin-top: 3px;
+  margin-right: 5px;
 }
 
 .bar {
@@ -68,7 +70,7 @@
 }
 
 .setting input:checked ~ .bar1 {
-    transform: rotate(-45deg) translateY(12.8px) translateX(-4px);
+    transform: rotate(-45deg) translateY(11.7px) translateX(-4px);
 }
 
 .setting input:checked ~ .bar2 {
@@ -76,5 +78,5 @@
 }
 
 .setting input:checked ~ .bar3 {
-    transform: rotate(45deg) translateY(-12.8px) translateX(-4px);
+    transform: rotate(45deg) translateY(-11.7px) translateX(-4px);
 }
