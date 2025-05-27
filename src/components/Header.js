@@ -1,9 +1,12 @@
+import "./Header.css"
 import Burger from '../components/Burger';
+import Settings from '../components/Settings';
 
 const Header = () => {
   return (
-    <div>
+    <div className="headerDiv">
       <Burger />
+      <Settings />
     </div>
   );
 };

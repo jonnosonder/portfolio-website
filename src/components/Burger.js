@@ -4,7 +4,7 @@ import { GlobalContext } from '../GlobalContext';
 
 
 const Burger = () => {
-  const { isBurgerActive, toggleExpanded } = useContext(GlobalContext);
+  const { isBurgerActive, toggleBurgerExpanded } = useContext(GlobalContext);
 
   return (
     <>
@@ -15,8 +15,8 @@ const Burger = () => {
           <p id="burgerName">Jonathan Kwok</p>
           <span id="rectangle"></span>
           <button 
-          className="burgerBtn"
-          onClick={toggleExpanded}
+            className="burgerBtn"
+            onClick={toggleBurgerExpanded}
           >Overview</button>
           <button className="burgerBtn">Experience</button>
           <button className="burgerBtn">Cerfificates</button>
@@ -27,10 +27,10 @@ const Burger = () => {
       <div style={{height:'3em'}}>
         <label className="hamburger" htmlFor="hamburger" id='hamburgerButton'>
             <input
-            type="checkbox"
-            id="hamburger"
-            checked={isBurgerActive}
-            onChange={toggleExpanded}
+              type="checkbox"
+              id="hamburger"
+              checked={isBurgerActive}
+              onChange={toggleBurgerExpanded}
             />
             <svg viewBox="0 0 32 32">
             <path

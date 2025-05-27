@@ -100,7 +100,7 @@
     bottom: 0;
     height: 2px;
     width: 0;
-    background-color: #ffc506;
+    background-color: var(--accent);
     transition: 0.5s ease;
 }
 
@@ -120,7 +120,7 @@
     bottom: 0;
     height: 0;
     width: 100%;
-    background-color: #ffc506;
+    background-color: var(--accent);
     transition: 0.4s ease;
     z-index: -1;
 }
