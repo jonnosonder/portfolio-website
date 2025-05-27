@@ -1,11 +1,35 @@
-body {
+html, body, #root {
+  height: 100%;
   margin: 0;
-  background-color: var(--background);
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+
+#body::-webkit-scrollbar {
+  display: none;
+}
+
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+.allowScrolling {
+  overflow-y: auto;
+}
+
+.noScrolling {
+  overflow-y: hidden;
 }
 
 code {

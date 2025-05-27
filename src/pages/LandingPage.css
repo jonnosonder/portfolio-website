@@ -1,11 +1,26 @@
-html, body, #root {
-    height: 100%;
-    margin: 0;
+.landingPageDiv {
+    height: 100vh;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.heroText {
-    display: flex;
+.landingPageDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.allowScrolling {
+  overflow-y: auto;
+  scroll-snap-type: y mandatory; 
+}
+
+.noScrolling {
+  overflow-y: hidden;
+}
+
+section {
     height: 80vh;
+    scroll-snap-align: center;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;

@@ -3,9 +3,9 @@ import Header from '../components/Header';
 
 const LandingPage = () => {
     return (
-        <>
+        <div className='landingPageDiv'>
         <Header />
-        <div className='heroText row'>
+        <section id="hero">
             <div style={{justifyContent:"center", margin: "30px"}}>
                 <p className='name_hi'>Hi, my name is</p>
                 <h1>Jonathan Kwok</h1>
@@ -41,8 +41,24 @@ const LandingPage = () => {
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="experience">
+
+        </section>
+
+        <section id="certificates">
+
+        </section>
+
+        <section id="3dmodeling">
+
+        </section>
+
+        <section id="skills">
+
+        </section>
         </div>
-        </>
   );
 };
 

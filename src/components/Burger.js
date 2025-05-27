@@ -16,11 +16,24 @@ const Burger = () => {
           <span id="rectangle"></span>
           <button 
             className="burgerBtn"
-            onClick={toggleBurgerExpanded}
+            onClick={() => {toggleBurgerExpanded(0);}}
           >Overview</button>
-          <button className="burgerBtn">Experience</button>
-          <button className="burgerBtn">Cerfificates</button>
-          <button className="burgerBtn">Skills</button>
+          <button 
+            className="burgerBtn"
+            onClick={() => {toggleBurgerExpanded(1);}}
+          >Experience</button>
+          <button 
+            className="burgerBtn"
+            onClick={() => {toggleBurgerExpanded(2);}}
+          >Cerfificates</button>
+          <button 
+            className="burgerBtn"
+            onClick={() => {toggleBurgerExpanded(3);}}
+          >3D Modeling</button>
+          <button 
+            className="burgerBtn"
+            onClick={() => {toggleBurgerExpanded(4);}}
+          >Skills</button>
         </div>
       )}</div>
 
@@ -30,7 +43,7 @@ const Burger = () => {
               type="checkbox"
               id="hamburger"
               checked={isBurgerActive}
-              onChange={toggleBurgerExpanded}
+              onChange={() => {toggleBurgerExpanded(-1);}}
             />
             <svg viewBox="0 0 32 32">
             <path
