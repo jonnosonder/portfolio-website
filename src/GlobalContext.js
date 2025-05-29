@@ -20,7 +20,7 @@ export const GlobalProvider = ({ children }) => {
     }
 
     if (isBurgerActive) {
-      if (whichSectionToScroll == 0) {
+      if (whichSectionToScroll === 0) {
         const sec = document.getElementById('hero');
         if (sec) {
           sec.scrollIntoView({ behavior: 'smooth', block: 'start' });

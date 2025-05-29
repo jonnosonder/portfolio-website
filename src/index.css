@@ -69,3 +69,7 @@ p {
   display: flex;
 }
 
+button {
+  font-family: 'Lexend', sans-serif;
+}
+
