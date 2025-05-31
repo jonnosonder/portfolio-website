@@ -3,8 +3,17 @@ import { createContext, useState } from 'react';
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+  const [isBackgroundActive, setIsBackgroundActive] = useState(true);
   const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isSettingsActive, setIsSettingsActive] = useState(false);
+
+  const [ballCountValue, setBallCountValue] = useState(40);
+  const [ballRadiusValue, setBallRadiusValue] = useState(2);
+  const [ballSpeedValue, setBallSpeedValue] = useState(1.5);
+
+  const toggleBackgroundActive = () => {
+    setIsBackgroundActive((prev) => !prev);
+  };
 
   const toggleBurgerExpanded = (whichSectionToScroll) => {
     setIsBurgerActive((prev) => !prev);
@@ -26,7 +35,7 @@ export const GlobalProvider = ({ children }) => {
           sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       } else if (whichSectionToScroll === 1) {
-        const sec = document.getElementById('experience');
+        const sec = document.getElementById('experiences');
         if (sec) {
           sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -36,11 +45,16 @@ export const GlobalProvider = ({ children }) => {
           sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }else if (whichSectionToScroll === 3) {
-        const sec = document.getElementById('3dmodeling');
+        const sec = document.getElementById('projects');
         if (sec) {
           sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }else if (whichSectionToScroll === 4) {
+        const sec = document.getElementById('3dmodeling');
+        if (sec) {
+          sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }else if (whichSectionToScroll === 5) {
         const sec = document.getElementById('skills');
         if (sec) {
           sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -54,7 +68,14 @@ export const GlobalProvider = ({ children }) => {
   };
 
   return (
-    <GlobalContext.Provider value={{ isBurgerActive, setIsBurgerActive, toggleBurgerExpanded, isSettingsActive, setIsSettingsActive, toggleSettingsExpanded }}>
+    <GlobalContext.Provider value={{ 
+        isBackgroundActive, setIsBackgroundActive, toggleBackgroundActive,
+        isBurgerActive, setIsBurgerActive, toggleBurgerExpanded,
+        isSettingsActive, setIsSettingsActive, toggleSettingsExpanded,
+        ballCountValue, setBallCountValue,
+        ballRadiusValue, setBallRadiusValue,
+        ballSpeedValue, setBallSpeedValue
+      }}>
       {children}
     </GlobalContext.Provider>
   );

@@ -1,16 +1,14 @@
-import { useRef, useEffect, useContext  } from 'react';
+import { useRef, useEffect, useContext } from 'react';
 import { GlobalContext } from '../GlobalContext';
 
 const BackgroundBalls = () => {
-  const { isBurgerActive } = useContext(GlobalContext);
+  const { isBackgroundActive, isBurgerActive, ballCountValue, ballRadiusValue, ballSpeedValue } = useContext(GlobalContext);
   const paused = isBurgerActive;
 
   const canvasRef = useRef(null);
   const balls = useRef([]);
   const animationFrameId = useRef(null);
   const pauseTimeoutId = useRef(null);
-
-  const ballCount = 40;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,12 +24,12 @@ const BackgroundBalls = () => {
 
     class Ball {
       constructor() {
-        this.radius = Math.random() * 2 + 1;
+        this.radius = Math.random() * 2 + parseFloat(ballRadiusValue);
         this.x = Math.random() * (canvas.width - this.radius * 2) + this.radius;
         this.y = Math.random() * (canvas.height - this.radius * 2) + this.radius;
-        this.dx = (Math.random() - 0.5) * 1.5;
-        this.dy = (Math.random() - 0.5) * 1.5;
-        this.color = 'white';
+        this.dx = (Math.random() - 0.5) * parseFloat(ballSpeedValue);
+        this.dy = (Math.random() - 0.5) * parseFloat(ballSpeedValue);
+        this.color = 'rgba(255, 255, 255, 1)';
       }
 
       draw() {
@@ -53,12 +51,30 @@ const BackgroundBalls = () => {
         this.y += this.dy;
         this.draw();
       }
+
+      updateRadius(newBallRadius) {
+        this.radius = Math.random() * 2 + parseFloat(newBallRadius);
+      }
+
+      updateSpeed(newVelocity) {
+        var newXV = (Math.random() - 0.5) * parseFloat(newVelocity);
+        var newYV = (Math.random() - 0.5) * parseFloat(newVelocity);
+        this.dx = newXV;
+        this.dy = newYV;
+      }
     }
 
-    if (balls.current.length === 0) {
-      for (let i = 0; i < ballCount; i++) {
-        balls.current.push(new Ball());
+    const createBalls = (count) => {
+      const newBalls = [];
+      for (let i = 0; i < count; i++) {
+        newBalls.push(new Ball());
       }
+      return newBalls;
+    };
+
+    // Initialize balls if empty or count has changed
+    if (balls.current.length !== ballCountValue) {
+      balls.current = createBalls(ballCountValue);
     }
 
     const animate = () => {
@@ -67,7 +83,7 @@ const BackgroundBalls = () => {
       animationFrameId.current = requestAnimationFrame(animate);
     };
 
-    if (!paused) {
+    if ((!paused) && (isBackgroundActive)) {
       // If unpausing, clear any pending pause timeout and start animation immediately
       if (pauseTimeoutId.current) {
         clearTimeout(pauseTimeoutId.current);
@@ -76,13 +92,21 @@ const BackgroundBalls = () => {
       animate();
     } else {
       animate();
-      pauseTimeoutId.current = setTimeout(() => {
+      if (isBackgroundActive){
+        pauseTimeoutId.current = setTimeout(() => {
+          if (animationFrameId.current) {
+            cancelAnimationFrame(animationFrameId.current);
+            animationFrameId.current = null;
+          }
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }, 1000);
+      } else {
         if (animationFrameId.current) {
           cancelAnimationFrame(animationFrameId.current);
           animationFrameId.current = null;
         }
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-      }, 1000);
+      }
     }
 
     return () => {
@@ -94,7 +118,23 @@ const BackgroundBalls = () => {
         clearTimeout(pauseTimeoutId.current);
       }
     };
-  }, [paused]);
+  }, [paused, isBackgroundActive, ballCountValue]); // Added ballCountValue to dependencies
+
+  useEffect(() => {
+      if (balls.current.length !== 0) { 
+        balls.current.forEach((ball) => { 
+          ball.updateRadius(ballRadiusValue);
+        });
+      }
+  }, [ballRadiusValue]);
+
+  useEffect(() => {
+      if (balls.current.length !== 0) {
+        balls.current.forEach((ball) => {
+          ball.updateSpeed(ballSpeedValue);
+        });
+      }
+  }, [ballSpeedValue]);
 
   return (
     <canvas

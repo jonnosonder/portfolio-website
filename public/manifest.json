@@ -3,22 +3,22 @@
   "name": "Jonathan Kwok Website Portfolio",
   "icons": [
   {
-    "src": "images/portfolio_profile-16x16.png",
+    "src": "images/profile/portfolio_profile-16x16.png",
     "sizes": "16x16",
     "type": "image/png"
   },
   {
-    "src": "images/portfolio_profile-32x32.png",
+    "src": "images/profile/portfolio_profile-32x32.png",
     "sizes": "32x32",
     "type": "image/png"
   },
   {
-    "src": "images/portfolio_profile-64x64.png",
+    "src": "images/profile/portfolio_profile-64x64.png",
     "sizes": "64x64",
     "type": "image/png"
   },
   {
-    "src": "images/portfolio_profile-180x180.png",
+    "src": "images/profile/portfolio_profile-180x180.png",
     "sizes": "180x180",
     "type": "image/png"
   }

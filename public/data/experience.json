@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Data Scientist",
+        "company": "Severn Trent Waters",
+        "employement": "Work Experience",
+        "start_date": "Jun 2023",
+        "end_date": "June 2023",
+        "image_path": "/images/experience/ST_HR_Logo.png",
+        "description": "Problem Solving: created a machine learning model to analyze and learn from a dataset and then generate accurate predictions, using critical thinking to overcome challenges\nPresenting: delivered clear presentation of my AI model results and methods used, effectively communicating concepts to the team\nCommunication: actively participated in various meetings ranging from welfare to project debriefs with coworkers, understanding how clear communication is done in the workplace\nLearning: Opportunity to meet each person of the team and their work, explaining to me their methods and reasoning"
+    },
+    {   
+        "title": "Manual Tester",
+        "company": "Test IO",
+        "employement": "Freelancer",
+        "start_date": "May 2025",
+        "end_date": "Present",
+        "image_path": "/images/experience/test_io_logo.png",
+        "description": "Reporting: after conducting testing and identifying bugs, I need to make detailed and clear documentation to effectively report my findings to the client\nProblem Solving: each job varies meaning new challenges will be present, needing to adapt strategies and develop new methods\nPersistence: bugs might not be found after long periods of testing, requiring maintaining a high level of focus during extended periods of testing\nAttention to Detail: subtle visual bugs can be hard to spot, finding these bugs ensures the user experience is seamless"
+    },
+    {
+        "title": "Private Tutor",
+        "company": "",
+        "employement": "Self-Employed",
+        "start_date": "Oct 2022",
+        "end_date": "Jan 2024",
+        "image_path": "/images/experience/user_logo.png",
+        "description": "Here is some description"
+    }
+]
