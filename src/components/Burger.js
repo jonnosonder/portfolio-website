@@ -30,10 +30,12 @@ const Burger = () => {
             className="burgerBtn"
             onClick={() => {toggleBurgerExpanded(3);}}
           >Projects</button>
+          {/*
           <button 
             className="burgerBtn"
             onClick={() => {toggleBurgerExpanded(4);}}
           >3D Modeling</button>
+          */}
           <button 
             className="burgerBtn"
             onClick={() => {toggleBurgerExpanded(5);}}

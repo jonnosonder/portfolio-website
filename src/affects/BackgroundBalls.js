@@ -118,7 +118,7 @@ const BackgroundBalls = () => {
         clearTimeout(pauseTimeoutId.current);
       }
     };
-  }, [paused, isBackgroundActive, ballCountValue]); // Added ballCountValue to dependencies
+  }, [paused, isBackgroundActive, ballCountValue, ballRadiusValue, ballSpeedValue]);
 
   useEffect(() => {
       if (balls.current.length !== 0) { 

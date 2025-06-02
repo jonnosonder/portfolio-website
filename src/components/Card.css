@@ -13,9 +13,9 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 2.5%;
-    height: 30%;
+    min-height: 20vh;
     cursor: pointer;
-    padding-bottom: 20%;
+    min-width: 20rem;
 }
 
 .infoCard:hover {
@@ -26,7 +26,7 @@
     width: 100%;
     display: flex;
     align-items: start;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .card_rectangle {
@@ -61,6 +61,20 @@
     bottom: 5%;
     height: 30%;
     max-height: 80px;
+}
+
+.card_link_button {
+  color: var(--primary);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  background-color: transparent;
+  padding: 0.5rem;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  height: 20%;
+  max-height: 80px;
+  cursor: pointer;
 }
 
 .card_enlarge_button {
@@ -139,14 +153,10 @@
     align-items: start;
     position: relative;
     width: 80%;
-    max-width: 90vw;
+    max-width: 80vw;
     max-height: 90vh;
+    min-height: 20vh;
     overflow-y: auto;
-}
-
-.enlarged-content {
-  width: 100%;
-  height: 100%;
 }
 
 .close-button {
@@ -184,4 +194,9 @@
 
 .card_close_button:hover {
   animation: bounceScale 0.8s ease-in-out;
+}
+
+.certificate_image {
+  padding: 1rem;
+  height: 50vh;
 }

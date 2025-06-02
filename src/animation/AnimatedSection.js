@@ -14,7 +14,7 @@ const AnimatedSection = ({ children, delay = 0 }) => {
           observer.unobserve(node);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
 
     if (node) {
@@ -35,8 +35,7 @@ const AnimatedSection = ({ children, delay = 0 }) => {
         opacity: isVisible ? 1 : 0,
         marginTop: isVisible ? '0' : '20px',
         transition: `opacity 0.5s ${delay}s ease-out, margin-top 0.5s ${delay}s ease-out`,
-        width: '100%',
-        height: '100%'
+        width: '100%'
       }}
     >
       {children}

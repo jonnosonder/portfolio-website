@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Hackathon (2nd place)",
+        "company": "Loughborough Computer Science",
+        "achievement_date": "May 2025",
+        "image_path": "/images/certificates/compscilboro_logo.png",
+        "url": "",
+        "credential_ID": "",
+        "credential_path": "/images/certificates/hackathon_certificate_lboro.png"
+    },
+    {   
+        "title": "Introduction to Data Science",
+        "company": "Santander Open Academy",
+        "achievement_date": "May 2025",
+        "image_path": "/images/certificates/santander_universidades_logo.png",
+        "url": "",
+        "credential_ID": "OA-2025-0518001133946",
+        "credential_path": "/images/certificates/santander_intro_to_data_science_certificate.png"
+    },
+    {
+        "title": "Data Science Job Simulation",
+        "company": "Forage - Lloyds Banking Group",
+        "achievement_date": "May 2025",
+        "image_path": "/images/certificates/theforage_logo.png",
+        "url": "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Zbnc2o4ok6kD2NEXx/EuvC8GPjkZ6xaiP9p_Zbnc2o4ok6kD2NEXx_n3W3GfFs5AJy2K5FN_1748015172512_completion_certificate.pdf",
+        "credential_ID": "xt8yiPXrvf8vCtMbt",
+        "credential_path": ""
+    },
+    {   
+        "title": "Python Programming Skills",
+        "company": "Loughborough University",
+        "achievement_date": "May 2025",
+        "image_path": "/images/certificates/compscilboro_logo.png",
+        "url": "https://learn.lboro.ac.uk/badges/badge.php?hash=5c1d9d556f5c5a59e8a5e3283480f1464b6d064a",
+        "credential_ID": "",
+        "credential_path": ""
+    },
+    {   
+        "title": "SQL Completion",
+        "company": "Loughborough University",
+        "achievement_date": "May 2025",
+        "image_path": "/images/certificates/compscilboro_logo.png",
+        "url": "https://learn.lboro.ac.uk/badges/badge.php?hash=04343254ca8f94f4cfda54d5b01c7580e0513a0f",
+        "credential_ID": "",
+        "credential_path": ""
+    }
+]
